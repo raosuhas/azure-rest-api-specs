@@ -128,3 +128,6 @@ using Azure.Core;
   "connectionState ",
   "csharp"
 );
+@@clientName(PrivateEndpointConnection.etag, "ETag", "csharp");
+@@clientName(NetworkInterface.privateIpAddress, "PrivateIPAddress", "csharp");
+@@clientName(EndpointDetail.ipAddress, "IPAddress", "csharp");
