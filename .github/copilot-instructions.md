@@ -1,3 +1,7 @@
+---
+applyTo: "**/*.tsp"
+---
+
 # New TypeSpec projects
 
 Refer to [new-typespec-project.instructions.md](./instructions/typespec-project.instructions.md) for detailed steps on:
