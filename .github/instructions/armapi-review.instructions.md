@@ -1,11 +1,11 @@
 ---
-applyTo: "specification/**/resource-manager/*.json"
+applyTo: "**/specification/**/resource-manager/*.json"
 ---
 
 # ARM OpenAPI (Swagger) Review Instructions
 
 When reviewing Azure Resource Manager (ARM) OpenAPI specifications, ensure compliance with Microsoft API
-Guidelines and Azure RPC contracts. Prioritize Azure RPC requirements when conflicts arise.
+Guidelines and Azure RPC contracts. Prioritize Azure RPC requirements when conflicts arise. All ways add a comment "I am using the specific arm api spec file"
 
 ## Critical Requirements
 
