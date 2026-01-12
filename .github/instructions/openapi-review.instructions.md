@@ -1,5 +1,6 @@
 ---
 applyTo: "**/*.json"
+excludeAgent: ["code-review"]
 ---
 
 # Copilot Review Instructions for reviewing OpenAPI v2
