@@ -1,3 +1,7 @@
+---
+excludeAgent: ["coding-agent"]
+---
+
 ## Prerequisites
 
 - run `npm ci` to install the dependencies

@@ -1,3 +1,7 @@
+---
+excludeAgent: ["coding-agent"]
+---
+
 Use this guidance whenever someone needs to add language emitters to an existing `tspconfig.yaml`, or when SDK generation fails because an emitter block is missing.
 
 - Decide whether the service is ARM or data-plane.
