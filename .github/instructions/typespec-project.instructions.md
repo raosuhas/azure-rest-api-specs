@@ -1,5 +1,5 @@
 ---
-excludeAgent: ["coding-agent"]
+excludeAgent: ["code-review"]
 ---
 
 Before creating or initializing a TypeSpec project, you must know your org name, service name, and the type of service: data-plane or control-plane (ARM).

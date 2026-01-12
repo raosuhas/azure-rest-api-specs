@@ -1,5 +1,5 @@
 ---
-excludeAgent: ["coding-agent"]
+excludeAgent: ["code-review"]
 ---
 
 - DO extend the `@azure-tools/typespec-azure-rulesets/data-plane` linter rule set in your tspconfig.yaml. Example:

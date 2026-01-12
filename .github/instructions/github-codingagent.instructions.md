@@ -1,5 +1,5 @@
 ---
-excludeAgent: ["coding-agent"]
+excludeAgent: ["code-review"]
 ---
 
 # Run SDK generation using pipeline in GitHub coding agent

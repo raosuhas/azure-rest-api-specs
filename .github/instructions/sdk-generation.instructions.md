@@ -1,5 +1,5 @@
 ---
-excludeAgent: ["coding-agent"]
+excludeAgent: ["code-review"]
 ---
 
 ## Prerequisites
