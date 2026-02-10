@@ -1,3 +1,7 @@
+---
+excludeAgent: "code-review"
+---
+
 - DO extend the `@azure-tools/typespec-azure-rulesets/resource-manager` linter rule set in your tspconfig.yaml. Example:
 
 ```yaml title=tspconfig.yaml
