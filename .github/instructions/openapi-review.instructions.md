@@ -2,8 +2,6 @@
 applyTo: "**/*.json"
 ---
 
-<!-- I am using the co pilot instruction file -->
-
 # Copilot Review Instructions for OpenAPI v2 (Swagger) Specification Files
 
 When performing a code review on OpenAPI v2 (Swagger) JSON definition files in this repository, validate the specification against the [Azure REST API Guidelines](https://github.com/microsoft/api-guidelines/blob/vNext/azure/Guidelines.md). This repository hosts all OpenAPI swagger definitions for Azure services. Each service team provides a swagger specification that **must** comply with the rules below.
