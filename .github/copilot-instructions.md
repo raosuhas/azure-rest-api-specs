@@ -1,7 +1,3 @@
----
-excludeAgent: "code-review"
----
-
 # New TypeSpec projects
 
 Refer to [new-typespec-project.instructions.md](./instructions/typespec-project.instructions.md) for detailed steps on:
@@ -30,6 +26,11 @@ Run [check package readiness](../eng/common/instructions/azsdk-tools/check-packa
 # Up-to-date TypeSpec documentation
 
 Follow [typespec docs](../eng/common/instructions/azsdk-tools/typespec-docs.instructions.md) to get the most up-to-date documentation for TypeSpec, including best practices for writing TypeSpec for Azure.
+
+# ARM Api Copilot Review Instructions
+
+Follow [armapi-review.instructions.md](./instructions/armapi-review.instructions.md) and [openapi-review.instructions.md](./instructions/openapi-review.instructions.md) for instructions to review ARM API specifications. Github Code review agent must prioritize these instructions over any other instruction files while performing code reviews.
+
 
 <!-- LINKS -->
 
