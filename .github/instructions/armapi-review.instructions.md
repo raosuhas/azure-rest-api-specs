@@ -39,21 +39,11 @@ Flag every violation clearly with the file path, JSON path or line number, the s
 
 ## 2. ARM Resource Model Rules
 
-### 2.1 Top-Level Body Properties (RPC-Put-V1-06)
-- Top-level properties of an ARM resource definition **MUST** be limited to **only** the following allowed set:
-  `id`, `name`, `type`, `location`, `tags`, `plan`, `sku`, `etag`, `managedBy`, `identity`, `systemData`, `properties`, `zones`, `extendedLocation`
-- All service-specific properties **MUST** be placed inside the `properties` bag — never at the resource top level.
-- If extra top-level properties are found, flag them and instruct the author to move them into `properties`.
-
-### 2.2 PUT Request/Response Schema Consistency (RPC-Put-V1-25)
-- The request body schema and the `200` response schema of a PUT operation **MUST** be identical.
-- This enables customers to GET a resource and re-PUT the result. If the schemas diverge, flag it as an ARM Error.
-
-### 2.3 PUT Response Must Be an ARM Resource (RPC-Put-V1-12)
+### 2.1 PUT Response Must Be an ARM Resource (RPC-Put-V1-12)
 - The `200` and `201` response models for a PUT operation **MUST** have `x-ms-azure-resource: true` set somewhere in their schema hierarchy (typically inherited from the common-types `Resource` base).
 - If missing, flag it and instruct the author to ensure the response model extends a common-types resource base.
 
-### 2.4 Tracked Resource Requirements
+### 2.2 Tracked Resource Requirements
 - A **tracked resource** (has `location` as required property) **MUST** implement all of:
   - **GET** — return the resource (RPC-Get-V1-01)
   - **PUT** — create or replace the resource (RPC-Put-V1-01)
@@ -63,11 +53,11 @@ Flag every violation clearly with the file path, JSON path or line number, the s
   - **List by Subscription** (RPC-Get-V1-11)
 - If any of these operations are missing for a tracked resource, flag it as an ARM Error.
 
-### 2.5 Nested Resources
+### 2.3 Nested Resources
 - Nested resources **MUST** have a List operation under their parent.
 - Nested resources **MUST NOT** be embedded inline in the parent resource's GET response body (see Azure Resource Graph guideline ARG001 below). Return a resource ID reference instead.
 
-### 2.6 Resource References Between Resources
+### 2.4 Resource References Between Resources
 - When a resource needs to reference another resource, use a **single property containing the fully qualified ARM resource ID** of the referenced resource.
 - This enables [linked access checks](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/overview) and is required for RBAC integration.
 - Do not use separate properties for subscription, resource group, and resource name when a single resource ID suffices.
@@ -225,10 +215,6 @@ Flag every violation clearly with the file path, JSON path or line number, the s
 - Copy the entire API surface when creating a new version. New preview versions should include all existing GA functionality plus new changes.
 - When promoting from preview to GA, the GA version **MUST** have a later date than the preview version.
 
-### 11.3 API Version Parity Across Clouds
-- Each API version **MUST** expose the same functionality in every cloud it is available in (Public, Mooncake, Fairfax).
-- API version "X" in one cloud must not correspond to different functionality from version "X" in another cloud.
-- The latest stable (non-preview) API version **MUST** be available in all clouds where the resource type is supported.
 
 ---
 
