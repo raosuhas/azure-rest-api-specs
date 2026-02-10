@@ -1,5 +1,5 @@
 ---
-excludeAgent: "code-review"
+applyTo: "specification/**/tspconfig.yaml"
 ---
 
 Use this guidance whenever someone needs to add language emitters to an existing `tspconfig.yaml`, or when SDK generation fails because an emitter block is missing.
