@@ -64,6 +64,10 @@ If you want to contribute to the repository, follow these steps:
 
 **Note:** Microsoft employees can use tooling for adding a new API version available [here](https://eng.ms/docs/products/azure-developer-experience/design/api-specs/api-specs), specially if not working with TypeSpec.
 
+### Resolving Merge Conflicts
+
+If your pull request has merge conflicts with the main branch, see the [Merge Conflict Resolution Guide](./documentation/merge-conflict-resolution.md) for detailed instructions on how to resolve them. You can also use our [Quick Reference](./documentation/merge-conflict-quick-reference.md) or the [automated helper script](./documentation/scripts/resolve-conflicts.sh).
+
 ## Pull Request Checks
 
 Every PR in this repo will go through a series of PR checks, including:
