@@ -141,6 +141,8 @@ These settings apply only when `--tag=package-preview-2025-09-01-preview` is spe
 
 ```yaml $(tag) == 'package-preview-2025-09-01-preview'
 input-file:
+  - Microsoft.Security/preview/2025-09-01-preview/defenderForStorageSettings.json
+  - Microsoft.Security/preview/2025-09-01-preview/operations.json
   - Microsoft.Security/preview/2025-09-01-preview/privateLinks.json
 ```
 
@@ -567,7 +569,6 @@ input-file:
 - Microsoft.Security/preview/2019-01-01-preview/automations.json
 - Microsoft.Security/preview/2019-01-01-preview/regulatoryCompliance.json
 - Microsoft.Security/preview/2019-01-01-preview/subAssessments.json
-- Microsoft.Security/preview/2020-01-01-preview/connectors.json
 - Microsoft.Security/preview/2020-01-01-preview/secureScore.json
 - Microsoft.Security/preview/2020-01-01-preview/securityContacts.json
 - Microsoft.Security/preview/2020-07-01-preview/sqlVulnerabilityAssessmentsBaselineRuleOperations.json
@@ -575,7 +576,6 @@ input-file:
 - Microsoft.Security/preview/2020-07-01-preview/sqlVulnerabilityAssessmentsScanResultsOperations.json
 - Microsoft.Security/preview/2021-05-01-preview/softwareInventories.json
 - Microsoft.Security/preview/2021-07-01-preview/customAssessmentAutomation.json
-- Microsoft.Security/preview/2021-07-01-preview/customEntityStoreAssignment.json
 - Microsoft.Security/preview/2021-10-01-preview/mdeOnboardings.json
 - Microsoft.Security/preview/2022-08-01-preview/securityConnectors.json
 
@@ -611,7 +611,6 @@ input-file:
 - Microsoft.Security/preview/2019-01-01-preview/automations.json
 - Microsoft.Security/preview/2019-01-01-preview/regulatoryCompliance.json
 - Microsoft.Security/preview/2019-01-01-preview/subAssessments.json
-- Microsoft.Security/preview/2020-01-01-preview/connectors.json
 - Microsoft.Security/preview/2020-01-01-preview/secureScore.json
 - Microsoft.Security/preview/2020-01-01-preview/securityContacts.json
 - Microsoft.Security/preview/2020-07-01-preview/sqlVulnerabilityAssessmentsBaselineRuleOperations.json
@@ -619,7 +618,6 @@ input-file:
 - Microsoft.Security/preview/2020-07-01-preview/sqlVulnerabilityAssessmentsScanResultsOperations.json
 - Microsoft.Security/preview/2021-05-01-preview/softwareInventories.json
 - Microsoft.Security/preview/2021-07-01-preview/customAssessmentAutomation.json
-- Microsoft.Security/preview/2021-07-01-preview/customEntityStoreAssignment.json
 - Microsoft.Security/preview/2021-10-01-preview/mdeOnboardings.json
 - Microsoft.Security/preview/2022-08-01-preview/securityConnectors.json
 - Microsoft.Security/stable/2018-06-01/pricings.json
@@ -645,10 +643,8 @@ input-file:
 - Microsoft.Security/preview/2019-01-01-preview/alertsSuppressionRules.json
 - Microsoft.Security/preview/2019-01-01-preview/regulatoryCompliance.json
 - Microsoft.Security/preview/2019-01-01-preview/subAssessments.json
-- Microsoft.Security/preview/2020-01-01-preview/connectors.json
 - Microsoft.Security/preview/2021-05-01-preview/softwareInventories.json
 - Microsoft.Security/preview/2021-07-01-preview/customAssessmentAutomation.json
-- Microsoft.Security/preview/2021-07-01-preview/customEntityStoreAssignment.json
 - Microsoft.Security/preview/2021-10-01-preview/mdeOnboardings.json
 - Microsoft.Security/preview/2022-01-01-preview/governanceAssignments.json
 - Microsoft.Security/preview/2022-01-01-preview/governanceRules.json
@@ -664,6 +660,7 @@ input-file:
 - Microsoft.Security/preview/2024-08-01-preview/securityConnectors.json
 - Microsoft.Security/preview/2025-05-04-preview/assessmentMetadata.json
 - Microsoft.Security/preview/2025-05-04-preview/assessments.json
+- Microsoft.Security/preview/2025-09-01-preview/defenderForStorageSettings.json
 - Microsoft.Security/preview/2025-11-01-preview/securityConnectorsDevOps.json
 - Microsoft.Security/preview/2025-10-01-preview/operations.json
 - Microsoft.Security/preview/2025-10-01-preview/operationResults.json
@@ -690,7 +687,6 @@ input-file:
 - Microsoft.Security/stable/2024-08-01/securityStandards.json
 - Microsoft.Security/stable/2024-08-01/standardAssignments.json
 - Microsoft.Security/stable/2024-08-01/customRecommedations.json
-- Microsoft.Security/stable/2025-06-01/defenderForStorageSettings.json
 - Microsoft.Security/stable/2026-01-01/privateLinks.json
 
 # Autorest suppressions
@@ -729,11 +725,9 @@ input-file:
 - Microsoft.Security/preview/2019-01-01-preview/automations.json
 - Microsoft.Security/preview/2019-01-01-preview/regulatoryCompliance.json
 - Microsoft.Security/preview/2019-01-01-preview/subAssessments.json
-- Microsoft.Security/preview/2020-01-01-preview/connectors.json
 - Microsoft.Security/preview/2020-01-01-preview/securityContacts.json
 - Microsoft.Security/preview/2021-05-01-preview/softwareInventories.json
 - Microsoft.Security/preview/2021-07-01-preview/customAssessmentAutomation.json
-- Microsoft.Security/preview/2021-07-01-preview/customEntityStoreAssignment.json
 - Microsoft.Security/preview/2021-10-01-preview/mdeOnboardings.json
 - Microsoft.Security/preview/2022-01-01-preview/governanceAssignments.json
 - Microsoft.Security/preview/2022-01-01-preview/governanceRules.json
@@ -890,7 +884,6 @@ These settings apply only when `--tag=package-2020-01-preview-python-only` is sp
 
 ``` yaml $(tag) == 'package-2020-01-preview-python-only'
 input-file:
-- Microsoft.Security/preview/2020-01-01-preview/connectors.json
 - Microsoft.Security/preview/2020-01-01-preview/securityContacts.json
 
 # Needed when there is more than one input file
@@ -990,7 +983,6 @@ These settings apply only when `--tag=package-2020-01-preview-only` is specified
 
 ``` yaml $(tag) == 'package-2020-01-preview-only'
 input-file:
-- Microsoft.Security/preview/2020-01-01-preview/connectors.json
 - Microsoft.Security/preview/2020-01-01-preview/secureScore.json
 - Microsoft.Security/preview/2020-01-01-preview/securityContacts.json
 
@@ -1094,7 +1086,6 @@ These settings apply only when `--tag=package-2021-07-preview-only` is specified
 ``` yaml $(tag) == 'package-2021-07-preview-only'
 input-file:
   - Microsoft.Security/preview/2021-07-01-preview/customAssessmentAutomation.json
-  - Microsoft.Security/preview/2021-07-01-preview/customEntityStoreAssignment.json
   - Microsoft.Security/preview/2021-07-01-preview/securityConnectors.json
 override-info:
   title: SecurityCenter
