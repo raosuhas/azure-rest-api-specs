@@ -1,0 +1,57 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "variables": {
+    "storageAccountName": "[concat('storage', uniqueString(resourceGroup().id))]",
+    "location": "[resourceGroup().location]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2025-06-01",
+      "name": "[variables('storageAccountName')]",
+      "location": "[variables('location')]",
+      "kind": "StorageV2",
+      "sku": {
+        "name": "Standard_LRS"
+      },
+      "properties": {
+        "accessTier": "Hot",
+        "allowBlobPublicAccess": false,
+        "allowSharedKeyAccess": false,
+        "minimumTlsVersion": "TLS1_2",
+        "supportsHttpsTrafficOnly": true,
+        "encryption": {
+          "keySource": "Microsoft.Storage",
+          "services": {
+            "blob": {
+              "enabled": true
+            },
+            "file": {
+              "enabled": true
+            }
+          }
+        },
+        "networkAcls": {
+          "defaultAction": "Allow",
+          "bypass": "AzureServices"
+        }
+      }
+    }
+  ],
+  "outputs": {
+    "storageAccountName": {
+      "type": "string",
+      "value": "[variables('storageAccountName')]"
+    },
+    "storageAccountId": {
+      "type": "string",
+      "value": "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
+    },
+    "primaryBlobEndpoint": {
+      "type": "string",
+      "value": "[reference(variables('storageAccountName')).primaryEndpoints.blob]"
+    }
+  }
+}
