@@ -1,5 +1,5 @@
 ---
-applyTo: "**/*.json"
+applyTo: "specification/**/*.json"
 ---
 
 # Copilot Review Instructions for OpenAPI v2 (Swagger) Specification Files

@@ -1,5 +1,5 @@
 ---
-applyTo: "**/specification/**/resource-manager/*.json"
+applyTo: "specification/**/resource-manager/**/*.json"
 ---
 
 # ARM-Specific OpenAPI (Swagger) Review Instructions
