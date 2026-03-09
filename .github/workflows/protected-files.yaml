@@ -41,7 +41,7 @@ jobs:
           . eng/scripts/ChangedFiles-Functions.ps1
 
           $protectedFiles = @(".gitignore", "cspell.json", "cspell.yaml", "package.json", "package-lock.json", ".github/*", ".vscode/*", "eng/*")
-          $excludedFiles = @(".github/CODEOWNERS")
+          $excludedFiles = @(".github/CODEOWNERS", ".github/workflows/copilot-setup-steps.yaml")
           $changedFiles = @(Get-ChangedFiles -baseCommitish HEAD^ -headCommitish HEAD -diffFilter "")
 
           $matchedFiles = @(

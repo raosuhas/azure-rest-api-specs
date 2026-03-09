@@ -406,9 +406,36 @@ Flag every violation clearly with the file path, JSON path or line number, the s
 
 ---
 
-## 15. Suppression Rules
+## 15. Managed Identity (ARM-Specific)
 
-### 15.1 Suppressions Must Include a `where` Clause
+### 15.1 Use Common Types for Managed Identity
+
+- Resources that support [Managed Identity](https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview) **MUST** use the standard `ManagedServiceIdentity` type from ARM common types (`common-types/resource-management/vX/managedidentity.json` or `types.json`).
+- **DO NOT** define a custom identity model inline. Always reference common types.
+- The `identity` property **MUST** be at the resource's **top level** (not inside the `properties` bag), per section 2.6.
+- Flag any resource that defines a custom `identity` structure instead of using common types.
+
+### 15.2 Supported Identity Types
+
+- The `type` field of `ManagedServiceIdentity` **MUST** be an extensible enum with `"modelAsString": true` containing at minimum:
+  - `"None"` — no identity
+  - `"SystemAssigned"` — system-assigned identity only
+  - `"UserAssigned"` — user-assigned identities only
+  - `"SystemAssigned,UserAssigned"` — both types enabled simultaneously
+- Flag any custom identity type enumeration that omits one of the above values or uses non-standard casing.
+
+### 15.3 User-Assigned Identity Map
+
+- The `userAssignedIdentities` property **MUST** be a **map** (object) keyed by the fully qualified ARM resource ID of each user-assigned managed identity, **not** an array.
+- Each value in the map **MUST** be an object with read-only properties `principalId` (uuid) and `clientId` (uuid).
+- In request bodies (PUT/PATCH), setting a map entry value to `null` signals removal of that identity (JSON Merge Patch semantics).
+- Flag any resource that uses an array for `userAssignedIdentities` instead of a map.
+
+---
+
+## 16. Suppression Rules
+
+### 16.1 Suppressions Must Include a `where` Clause
 
 - Any suppression of an ARM or linter rule **MUST** include a `where` clause specifying exactly which path(s), operation(s), or property/properties the suppression applies to.
 - **Blanket suppressions** (those without a `where` clause targeting the entire file or all occurrences) are **NOT allowed**.
@@ -455,6 +482,12 @@ When reviewing ARM resource-manager swagger files, verify:
 ### Security & Secrets
 - ✅ No secrets in GET/PUT/PATCH responses; secrets annotated with "x-ms-secret: true"
 - ✅ Secret retrieval exposed via `list*` POST action, not GET
+
+### Managed Identity
+- ✅ `identity` property uses ARM common-types `ManagedServiceIdentity`, not a custom definition
+- ✅ `identity` is at the resource top level (not inside `properties`)
+- ✅ Identity `type` enum includes all four values: `None`, `SystemAssigned`, `UserAssigned`, `SystemAssigned,UserAssigned`
+- ✅ `userAssignedIdentities` is a map keyed by ARM resource ID (not an array)
 
 ### Long-Running Operations
 - ✅ 202 responses do NOT contain the resource body
